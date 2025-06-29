@@ -1,4 +1,4 @@
-# Website Underprogress But Link is Working - https://pixel-pilot-dev.vercel.app/
+# Website Underprogress But Link is Working 
 
 # PixelPilot - AI Text-to-Image Generator
 
