@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Wand2, Download, Loader2, Image as ImageIcon } from 'lucide-react'
+import Loader from './Loader'
 import '../App.css'
 
 // Debug: Log that we're using Hugging Face API with smart fallback
@@ -279,7 +280,8 @@ export default function ImageGenerator() {
             >
               {isLoading ? (
                 <>
-                  <Loader2 className="icon spin" /> Generating...
+                  <Loader size={20} />
+                  <span style={{ marginLeft: '8px' }}>Generating...</span>
                 </>
               ) : (
                 <>
@@ -305,7 +307,7 @@ export default function ImageGenerator() {
             <div className="image-preview">
               {isLoading ? (
                 <div className="loading-preview">
-                  <Loader2 className="icon spin large" />
+                  <Loader />
                   <p>Creating your masterpiece...</p>
                 </div>
               ) : generatedImage ? (
@@ -329,16 +331,6 @@ export default function ImageGenerator() {
                 <p className="style-meta">Style: {styleOptions.find(s => s.value === imageStyle)?.label}</p>
               </div>
             )}
-          </div>
-          <div className="card">
-            <h3 className="recent-title">Recent Generations</h3>
-            <div className="recent-grid">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="recent-img-placeholder">
-                  <ImageIcon className="icon faded" />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
